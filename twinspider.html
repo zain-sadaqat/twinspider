@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <title>Twin Spider</title>
+
+    <link
+      rel="canonical"
+      href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+
+    <style amp-boilerplate>
+        body {
+          -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+          -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+          -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+          animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        }
+        @-webkit-keyframes -amp-start {
+          from {
+            visibility: hidden;
+          }
+          to {
+            visibility: visible;
+          }
+        }
+        @-moz-keyframes -amp-start {
+          from {
+            visibility: hidden;
+          }
+          to {
+            visibility: visible;
+          }
+        }
+        @-ms-keyframes -amp-start {
+          from {
+            visibility: hidden;
+          }
+          to {
+            visibility: visible;
+          }
+        }
+        @-o-keyframes -amp-start {
+          from {
+            visibility: hidden;
+          }
+          to {
+            visibility: visible;
+          }
+        }
+        @keyframes -amp-start {
+          from {
+            visibility: hidden;
+          }
+          to {
+            visibility: visible;
+          }
+        }
+      </style>
+
+        <noscript>
+        <style amp-boilerplate>
+        body {
+            -webkit-animation: none;
+            -moz-animation: none;
+            -ms-animation: none;
+            animation: none;
+        }
+        </style>
+        </noscript>
+
+        <!-- Custom Style -->
+        <style amp-custom>
+          * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            text-decoration : none;
+            list-style: none;
+            scrollbar-width: thin;
+            transition: all .25s cubic-bezier(0.22, .1, .1, .1);
+
+          }
+          :root {
+            --main-color : linear-gradient(to right, #0b5af0, #03A9F4, #40c4ff);
+            --white-color : #FFF;
+          }
+          .section__one {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #f9f9f9;
+          }
+          .section__one > span {
+            margin: 0px 10px;
+            padding: 2px 5px;
+            color : #A0A0A0;
+            font-size: 14px;
+          }
+          .headerbar {
+            align-items: center;
+            background-image : linear-gradient(to right, #0b5af0, #03A9F4, #40c4ff);
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+            display: flex;
+            left: 0;
+            padding-left: 1rem;
+            right: 0;
+            top: 20;
+            z-index: 999;
+          }
+
+          .headerbar h1{
+            color : var(--white-color);
+          }
+
+          .sidebar {
+            background-color: #0a0a0a;
+            min-width: 300px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            width: 300px;
+          }
+          .navbar-trigger {
+            cursor: pointer;
+            font-size: 2rem;
+            line-height: 3.5rem;
+            outline: none;
+            padding-right: 1rem;
+            color: var(--white-color);
+          }
+          .nav-item {
+            padding: 15px;
+            color : var(--white-color);
+          }
+          .nav-item a{
+            color : var(--white-color);
+          }
+          .label {
+            font-size: 0.875rem;
+            letter-spacing: 0.06rem;
+            line-height: 1.125rem;
+            list-style: none;
+            padding: 0;
+            text-transform: uppercase;
+          }
+          
+          .section__two {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%px;
+            height: 88vh;
+            object-fit: contain;
+            opacity: 0.35;
+            z-index: -1;
+          }
+
+          .section__subtwo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+          }
+
+          .section__subtwo > button {
+            padding : 10px;
+            background-image: var(--main-color);
+            color: var(--white-color);
+            margin-top: 15px;
+            outline: none;
+            border : none;
+            border-radius: 4px;
+            z-index: 1;
+
+          }
+
+         
+        </style>
+
+        <!-- Font Awesome -->
+        <link
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"
+        />
+
+        <!-- AMP Sidebar -->
+        <script 
+        async 
+        custom-element="amp-sidebar" 
+        src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js">
+      </script>
+        </head>
+
+        <body>
+
+            <div class="section__one">
+              <span><i class="fa fa-envelope"></i> info@twinspider.com</span>
+              <span><i class="fa fa-phone"></i> 0900 78601</span>
+              <span><i class="fa fa-whatsapp"></i> +92 333 444 5555</span>
+            </div>
+
+            <header class="headerbar">
+              <div
+                class="navbar-trigger"
+                role="button"
+                tabindex="0"
+                on="tap:sidebar1.toggle"
+              >
+                ☰
+              </div>
+              <h1>TwinSpider</h1>
+            </header>
+
+            <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
+              <div
+                class="navbar-trigger"
+                role="button"
+                tabindex="0"
+                on="tap:sidebar1.toggle"
+              >
+                X
+              </div>
+              <nav class="nav">
+                <ul class="label">
+                  <li class="nav-item">
+                    <i class="fa fa-home"></i> <a href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <i class="fa fa-user"></i> <a href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <i class="fa fa-phone"></i> <a href="#">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <i class="fa fa-book"></i> <a href="#">Testimonial</a>
+                  </li>
+                  
+                </ul>
+              </nav>
+            </amp-sidebar>
+
+            <div class="section__two">
+              <div class="section__subtwo">
+                <h1>WEAVING YARNS, BUILDING WEB</h1>
+                <p>Providing Technology Stack You Need</p>
+                <button>See my Work</button>
+              </div>
+            </div>
+
+
+        </body>
+        </html>
